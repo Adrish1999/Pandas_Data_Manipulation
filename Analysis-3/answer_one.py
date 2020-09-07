@@ -68,13 +68,14 @@ def answer_one():
     "China, Hong Kong Special Administrative Region": "Hong Kong"}
     energy.replace({"Country": di},inplace = True)
     
-    ###################################################################################
+    
     GDP = pd.read_csv('world_bank.csv', skiprows=4)
     GDP.replace({"Korea, Rep.": "South Korea", 
                 "Iran, Islamic Rep.": "Iran",
                 "Hong Kong SAR, China": "Hong Kong"}, inplace=True)
     GDP.rename(columns={'Country Name': 'Country'}, inplace=True)
     ScimEn = pd.read_excel('scimagojr-3.xlsx')
+    
 
     df = pd.merge(pd.merge(energy, GDP, on='Country'), ScimEn, on='Country')
     df.set_index('Country',inplace=True)
