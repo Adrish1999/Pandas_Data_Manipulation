@@ -3,6 +3,8 @@
 
 #This function should return a single number.
 
+import numpy as np
+import pandas as pd
 
 def answer_two():
     energy = pd.read_excel('Energy Indicators.xls',skiprows=1,skipfooter=1)
